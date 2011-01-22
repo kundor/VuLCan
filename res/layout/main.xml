@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/mainscreen"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+<org.kundor.vulcan.VerticalSeekBar
+	android:id="@+id/ProgressSeekBar"
+    android:progressDrawable="@drawable/progress_vertical"
+    android:thumb="@drawable/seek_thumb"
+    android:layout_height="fill_parent"
+    android:layout_width="26dip" 
+    android:layout_alignParentLeft="true" />
+    
+<TextView android:id="@+id/progress"
+   	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@id/ProgressSeekBar" />
+
+<Button android:id="@+id/pause"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/pause"
+	android:layout_centerHorizontal="true"
+	android:layout_alignParentTop="true"
+	android:layout_margin="20dip"
+	android:tag="key key-pause"
+	android:onClick="executeTag" />
+
+<Button android:id="@+id/stop"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/stop"
+	android:layout_toLeftOf="@id/pause"
+	android:layout_alignParentTop="true"
+	android:layout_margin="20dip"
+	android:tag="key key-stop"
+	android:onClick="executeTag" />
+
+<Button android:id="@+id/play"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/play"
+	android:layout_toRightOf="@id/pause"
+	android:layout_alignParentTop="true"
+	android:layout_margin="20dip"
+	android:tag="key key-play"
+	android:onClick="executeTag" />
+
+<Button android:id="@+id/slowforward"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/slowforward"
+	android:layout_centerHorizontal="true"
+	android:layout_below="@id/pause"
+	android:layout_margin="20dip"
+	android:tag="key key-slower"
+	android:onClick="executeTag" />
+
+<Button android:id="@+id/frame"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/frame"
+	android:layout_toLeftOf="@id/slowforward"
+	android:layout_alignBaseline="@id/slowforward"
+	android:layout_margin="20dip"
+	android:tag="key key-frame-next"
+	android:onClick="executeTag" />
+
+<Button android:id="@+id/fastforward"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/fastforward"
+	android:layout_toRightOf="@id/slowforward"
+	android:layout_alignBaseline="@id/slowforward"
+	android:layout_margin="20dip"
+	android:tag="key key-faster"
+	android:onClick="executeTag" />
+
+<Button android:id="@+id/back_extrashort"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/back"
+	android:layout_below="@id/slowforward"
+	android:layout_alignLeft="@id/frame"
+	android:layout_margin="20dip"
+	android:tag="key key-jump-extrashort"
+	android:onClick="executeTag" />
+
+<Button android:id="@+id/jump_extrashort"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/play"
+	android:layout_below="@id/slowforward"
+	android:layout_alignRight="@id/fastforward"
+	android:layout_margin="20dip"
+	android:tag="key key-jump+extrashort"
+	android:onClick="executeTag" />
+
+<Button android:id="@+id/back_short"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/back"
+	android:layout_below="@id/back_extrashort"
+	android:layout_alignLeft="@id/frame"
+	android:layout_margin="20dip"
+	android:tag="key key-jump-short"
+	android:onClick="executeTag" />
+
+<Button android:id="@+id/jump_short"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/play"
+	android:layout_below="@id/jump_extrashort"
+	android:layout_alignRight="@id/fastforward"
+	android:layout_margin="20dip"
+	android:tag="key key-jump+short"
+	android:onClick="executeTag" />
+
+<Button android:id="@+id/back_medium"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/back"
+	android:layout_below="@id/back_short"
+	android:layout_alignLeft="@id/frame"
+	android:layout_margin="20dip"
+	android:tag="key key-jump-medium"
+	android:onClick="executeTag" />
+
+<Button android:id="@+id/jump_medium"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/play"
+	android:layout_below="@id/jump_short"
+	android:layout_alignRight="@id/fastforward"
+	android:layout_margin="20dip"
+	android:tag="key key-jump+medium"
+	android:onClick="executeTag" />
+
+<Button android:id="@+id/back_long"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/back"
+	android:layout_below="@id/back_medium"
+	android:layout_alignLeft="@id/frame"
+	android:layout_margin="20dip"
+	android:tag="key key-jump-long"
+	android:onClick="executeTag" />
+
+<Button android:id="@+id/jump_long"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/play"
+	android:layout_below="@id/jump_medium"
+	android:layout_alignRight="@id/fastforward"
+	android:layout_margin="20dip"
+	android:tag="key key-jump+long"
+	android:onClick="executeTag" />
+
+<TextView android:id="@+id/midanchor"
+    android:layout_width="wrap_content"
+    android:layout_height="0px"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true" />
+
+<Button android:id="@+id/SysVolUp"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/up"
+	android:layout_alignParentRight="true"
+    android:layout_alignParentTop="true" />
+
+<Button android:id="@+id/SysVolDown"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/down"
+	android:layout_alignParentRight="true"
+    android:layout_above="@id/midanchor" />
+
+<Button android:id="@+id/VLCVolUp"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/up"
+	android:layout_alignParentRight="true"
+    android:layout_below="@id/midanchor"
+    android:tag="key key-vol-up"
+    android:onClick="VLCVolumeAdjust" />
+
+<Button android:id="@+id/VLCVolDown"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:background="@drawable/down"
+	android:layout_alignParentRight="true"
+	android:layout_alignParentBottom="true"
+	android:tag="key key-vol-down"
+	android:onClick="VLCVolumeAdjust" />
+        
+<org.kundor.vulcan.VerticalSeekBar
+	android:id="@+id/SysVolSeekBar"
+    android:progressDrawable="@drawable/progress_vertical"
+    android:thumb="@drawable/seek_thumb"
+    android:layout_height="fill_parent"
+    android:layout_width="26dip"
+	android:layout_below="@id/SysVolUp"
+    android:layout_above="@id/SysVolDown"
+	android:gravity="center_horizontal"
+	android:layout_alignLeft="@id/SysVolDown"
+	android:layout_alignRight="@id/SysVolDown" />
+
+<org.kundor.vulcan.VerticalSeekBar
+	android:id="@+id/VLCVolSeekBar"
+    android:progressDrawable="@drawable/progress_vertical"
+    android:thumb="@drawable/seek_thumb"
+    android:layout_height="fill_parent"
+    android:layout_width="26dip"
+    android:layout_below="@id/VLCVolUp"
+    android:layout_above="@id/VLCVolDown"
+    android:layout_alignParentRight="true" />
+
+<ToggleButton android:id="@+id/fullscreen"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="24dip"
+    android:layout_marginBottom="10dip"
+    android:textOn=""
+    android:textOff=""
+	android:background="@drawable/fullscreen"
+	android:layout_toRightOf="@id/ProgressSeekBar"
+	android:layout_alignParentBottom="true"
+	android:tag="fullscreen"
+	android:onClick="executeTag" />
+
+<ToggleButton android:id="@+id/cc"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+	android:layout_margin="10dip"    
+    android:layout_centerHorizontal="true"
+    android:textOn=""
+    android:textOff=""
+	android:background="@drawable/cc"
+	android:layout_alignParentBottom="true"
+	android:tag="key key-subtitle-track"
+	android:onClick="executeTag" />
+    
+<ToggleButton android:id="@+id/mute"
+	android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="24dip"
+    android:layout_marginBottom="12dip"
+    android:textOn=""
+    android:textOff=""
+	android:background="@drawable/mute"
+	android:layout_toLeftOf="@id/VLCVolSeekBar"
+	android:layout_alignParentBottom="true"
+	android:tag="key key-vol-mute"
+	android:onClick="executeTag" />
+
+</RelativeLayout>
